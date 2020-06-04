@@ -6,7 +6,7 @@ function PostFiles(method,arr){
 }
 
 
-let sendRequest=>(met,url,body=null){
+let sendRequest=(met,url,body=null)=>{
 	return new Promise((resolve,reject)=>{
 		const xhr= new XMLHttpRequest()
 		xhr.open(met,url)
