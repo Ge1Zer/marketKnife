@@ -23,7 +23,7 @@ function sendRequest(met,url,body=null){
 			reject(xhr.response)
 		}
 
-		xhr.send( JSON.stringify(body) )
+		xhr.send(body)
 	})
 
 }
