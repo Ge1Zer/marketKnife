@@ -1,8 +1,8 @@
 function GetFiles(method,type,id){
-	return sendRequest("GET",`http://localhost:1000/knife/${method}/?type=${type}&id=${id}`)
+	return sendRequest("GET",`https://express-kuku.herokuapp.com/knife/${method}/?type=${type}&id=${id}`)
 }
 function PostFiles(method,arr){
-	return sendRequest("POST",`http://localhost:1000/knife/${method}`,arr)
+	return sendRequest("POST",`https://express-kuku.herokuapp.com/knife/${method}`,arr)
 }
 
 
