@@ -6,25 +6,25 @@ function PostFiles(method,arr){
 }
 
 
-let sendRequest= async (met,url,body=null)=>{
-	let options={}
-	if(body===null){
-		options={
-			method:met
+let sendRequest=(met,url,body=null)=>{
+	return new Promise((resolve,reject)=>{
+		const xhr= new XMLHttpRequest()
+		xhr.open(met,url)
+		xhr.responseType="json"
+		xhr.setRequestHeader("Content-type",'application/json')
+		xhr.onload=()=>{
+			if(xhr.status >=400){
+				reject(xhr.response)
+			}else{
+				resolve(xhr.response)
+			}
 		}
-	}else{
-		options={
-			method:met
-			,body:JSON.stringify(body)
-			,header:{}
+		xhr.onerror=()=>{
+			reject(xhr.response)
 		}
-	}
-	
-	return fetch(url,options)
-						.then(
-							res=>res.json()
 
-							)
+		xhr.send( JSON.stringify(body) )
+	})
 
 }
 
