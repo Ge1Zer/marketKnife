@@ -1,0 +1,1 @@
+function GetFiles(e,t,n){return sendRequest("GET",`http://localhost:1000/knife/${e}/?type=${t}&id=${n}`)}function PostFiles(e,t){return sendRequest("POST","http://localhost:1000/knife/"+e,t)}let sendRequest=async(e,t,n=null)=>{let s={};return s=null===n?{method:e}:{method:e,body:JSON.stringify(n),header:{}},fetch(t,s).then(e=>e.json())};
