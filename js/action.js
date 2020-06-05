@@ -70,10 +70,10 @@ let actionClick=()=>{
 		
 
 		if(!document.cookie){
-			document.cookie=`produkt:[${JSON.stringify(obj)}]; max-age=3600`
+			document.cookie=`produkt:[${JSON.stringify(obj)}]; max-age=36`
 		}else if(arr.length<event.target.attributes['data-stock'].value){
 			arr.push(obj)
-			document.cookie=`produkt:${JSON.stringify(arr)}; max-age=3600`
+			document.cookie=`produkt:${JSON.stringify(arr)}; max-age=36`
 		}
 	})
 }
