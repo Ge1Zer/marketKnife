@@ -32,9 +32,11 @@ html, body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
 }
 html ::-webkit-scrollbar, body ::-webkit-scrollbar {
   width: 0;
+  height: 0;
 }
 
 input, button, textarea {
@@ -75,21 +77,52 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-section {
-  -ms-overflow-style: none;
-}
-section ::-webkit-scrollbar {
-  width: 0;
+/*
+::-webkit-scrollbar-button {
+background-image:url('');
+background-repeat:no-repeat;
+width:6px;
+height:0px
 }
 
+::-webkit-scrollbar-track {
+background-color:#32312e;
+box-shadow:0px 0px 3px #000 inset;
+}
+
+::-webkit-scrollbar-thumb {
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color:#ffcb17;
+box-shadow:0px 1px 1px #fff inset;
+background-image:url('https://yraaa.ru/_pu/24/59610063.png');
+background-position:center;
+background-repeat:no-repeat;
+}
+
+::-webkit-resizer{
+background-image:url('');
+background-repeat:no-repeat;
+width:7px;
+height:0px
+}
+
+::-webkit-scrollbar{
+width: 5px;
+}*/
 body {
+  font-family: "Inconsolata", monospace;
+  letter-spacing: -1px;
+  font-size: 1.4em;
+  background: black url(https://geizer6991.github.io/marketKnife/img/content/fontree.jpg) 0 0/200% 100% no-repeat;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
   flex-direction: row;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
   width: 200%;
   position: relative;
   z-index: 0;
@@ -134,9 +167,9 @@ body {
   text-align: center;
   position: relative;
   margin: 10px;
-  border: 1px solid #000;
+  color: #C6C4C4;
   border-radius: 20px;
-  background: #999;
+  background: #000;
 }
 .menu > div > .itemMenu {
   height: 100%;
@@ -159,200 +192,152 @@ body {
   border-radius: 10px;
   padding: 10px;
   margin: 5px 0 5px 0;
-  background: #999;
+  background: #000;
 }
 
 section {
   position: relative;
   flex: 1 1 100%;
+  height: auto;
   overflow: auto;
   z-index: 0;
 }
 
-.about_home {
-  position: relative;
-  max-width: 1200px;
+.home .fon {
+  position: fixed;
   width: 100%;
-  border-radius: 20px 20px 0 0;
-  border: 1px solid #999;
-  margin: -40% auto 0 auto;
-  padding: 15px;
-  background: #fafafa;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
-
-.tittle_home {
-  min-height: 200px;
-}
-.tittle_home h1 {
-  text-align: center;
-  font-size: 30px;
-}
-.tittle_home h2 {
-  text-align: center;
-  font-size: 30px;
-}
-.tittle_home p {
-  text-align: justify;
-  padding: 10px;
-}
-
-.author {
-  width: 100px;
-  height: 100px;
-  margin: 15px;
-  float: right;
-}
-
-.items_video_home {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: row;
-  overflow: auto;
-}
-.items_video_home .item_video_home {
-  min-width: 96%;
-  height: 200px;
-  width: 200px;
-  margin: 10px;
-}
-
-.items_coment_home {
-  overflow: auto;
-  margin: 0 auto;
-}
-
-.item_coment_home {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1px solid #999;
-  border-top: 1px solid #999;
-  border-radius: 20px 20px 20px 20px;
-  margin: 5px 0 5px 0;
-}
-.item_coment_home img {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  border-radius: 50%;
-}
-.item_coment_home > div {
+.home .header {
+  max-width: 1300px;
   width: 100%;
-  margin: 0 10px 0 10px;
+  margin: 0 auto 2% auto;
+  position: relative;
+  z-index: 3;
 }
-.item_coment_home > div > div > time {
+.home .header .header_logo > div {
+  height: 50px;
+  background: #000;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+  border-bottom: 1px solid #fff;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6em;
+}
+.home .header .header_logo > div > img {
+  width: 80px;
+  margin: 0 0 0 -60px;
+}
+.home .header .header_logo > h2 {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  background: rgba(250, 250, 250, 0.9);
+  border-radius: 10px;
+  margin: 10px 0 0 0;
+}
+.home .header .header_question > div {
+  width: 90%;
+  margin: 10px auto;
+}
+.home .header .header_question > div > h2 {
+  margin: 10px 0;
+  background: rgba(250, 250, 200, 0.5);
+  padding: 0 10px 0 10px;
+  border-radius: 10px;
+}
+.home .header .header_question > div > div {
+  display: none;
+}
+.home .header .header_question > div > div > h4 {
+  background: rgba(11, 78, 122, 0);
+  color: #004545;
+  text-decoration: line-through;
   margin: 0 0 0 10px;
 }
-.item_coment_home > div > p {
-  margin: 10px 0 10px 0;
-  max-height: 60px;
-  overflow: hidden;
+.home .header .header_question > div > div > h2 {
+  background: rgba(23, 91, 33, 0.1);
+  border: 1px solid #999;
+  margin: 0 0 0 20px;
+  padding: 7px;
+  border-radius: 10px;
+  color: #009696;
 }
-
-.tex {
-  word-break: break-all;
+.home > .container_monolog {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
 }
-
-.full_com_home {
-  text-align: center;
-  background: #e6e6e6;
-}
-
-.input_coment_home {
+.home > .container_monolog > div {
+  border: 1px solid #000;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
   flex-direction: column;
-  margin: 30px 0;
+  text-align: justify;
 }
-.input_coment_home input {
-  border-radius: 20px 20px 0 0;
-  border-top: 1px solid #999;
-  padding: 1px 10px;
+.home > .container_monolog > div:nth-child(odd) {
+  background: url(https://m.io.ua/img_aa/medium/3565/43/35654329.jpg) 0 0/100% no-repeat;
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px 0 10px 5%;
 }
-.input_coment_home textarea {
-  max-width: 100%;
-  min-width: 100%;
-  border-top: 1px solid #999;
-  border-bottom: 1px solid #999;
-  padding: 1px 10px;
-}
-.input_coment_home button {
-  border-radius: 0 0 20px 20px;
-  border-bottom: 1px solid #999;
-  padding: 1px 10px;
-}
-
-.tittle_home_contact {
+.home > .container_monolog > div:nth-child(odd) > div > h2 {
+  font-size: 20px;
   text-align: center;
+  margin: 0 0 0 -5%;
+  text-decoration: underline;
 }
-
-.desc_cont_home {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: row;
+.home > .container_monolog > div:nth-child(even) {
+  width: 4px;
+  height: 30px;
+  border-radius: 50px;
+  margin: 10px auto;
+  position: relative;
+  border: 1px solid #fff;
+  background: #E6A950;
 }
-
-.my_cont {
-  flex: 1 1 50%;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-direction: row;
+.home > .container_monolog > div:nth-child(even):after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0%;
+  margin: -5px 0 0 0;
+  left: -200%;
+  background: #B46420;
 }
-
-.my_company {
-  flex: 1 1 50%;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+.home > .container_monolog > div:nth-child(even):before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 90%;
+  left: -200%;
+  background: #B46420;
+}
+.home > .container_monolog > div:nth-child(1) {
+  font-size: 40px;
   align-items: center;
-  justify-content: center;
 }
-.my_company > div > div {
-  margin: 5px 0 5px 0;
+.home > .container_monolog > div:nth-child(1) > h1 {
+  margin: 0 0 0 -5%;
 }
-
-.my_logo {
-  width: 30%;
-  text-align: center;
-}
-.my_logo img {
-  border-radius: 25%;
-  width: 100%;
-  max-width: 75px;
-}
-
-.netwo {
-  align-self: center;
-}
-.netwo div img {
-  margin: 0 5px 0 0;
-  width: 20px;
-  height: 20px;
-}
-
-.footer_home {
-  border-top: 1px solid #999;
-  text-align: center;
-}
-
 .container_menu {
   left: 0;
   top: 0;
@@ -387,10 +372,13 @@ section {
 }
 
 .item_knife {
+  box-shadow: 0px 5px 21px 0px #f37d35;
+  -webkit-box-shadow: 0px 5px 21px 0px #f37d35;
+  -moz-box-shadow: 0px 5px 21px 0px #f37d35;
   position: relative;
   width: 40%;
   height: 200px;
-  border: 1px solid #000;
+  border-radius: 10px;
   margin: 5%;
 }
 
@@ -398,9 +386,11 @@ section {
   position: absolute;
   top: 0;
   height: 100%;
+  border-radius: 10px;
   z-index: 0;
 }
 .ite_back img {
+  border-radius: 10px;
   height: 100%;
   width: 100%;
 }
@@ -439,16 +429,22 @@ section {
 
 .desc_kni_gray {
   background: rgba(200, 200, 200, 0.5);
+  border-radius: 10px;
+}
+
+.item_knife:hover {
+  box-shadow: 0px 5px 21px 0px black;
+  -webkit-box-shadow: 0px 5px 21px 0px black;
+  -moz-box-shadow: 0px 5px 21px 0px black;
 }
 
 .item_knife_only {
   position: absolute;
-  overflow: auto;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 11;
-  background: #999;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .but_ex {
@@ -464,21 +460,17 @@ section {
   width: 50px;
   height: 50px;
   margin: 20px;
-  background: url("https://geizer6991.github.io/marketKnife/img/header/cross_114275.png") 50% 50%/90% no-repeat;
+  background: url(https://apico.by/files/block/s-1395.png) 50% 50%/90% no-repeat;
 }
 
 .cont_only {
   max-width: 1300px;
   height: 100%;
-  overflow: auto;
   margin: -20px auto 200px auto;
-  background: #fafafa;
+  background: #fafafa url(https://m.io.ua/img_aa/medium/3565/43/35654329.jpg) 0 0/100% 100% no-repeat;
   border-radius: 20px;
   padding: 20px;
   line-height: 20px;
-  -webkit-box-shadow: 3px 2px 40px 24px rgba(0, 0, 0, 0.13);
-  -moz-box-shadow: 3px 2px 40px 24px rgba(0, 0, 0, 0.13);
-  box-shadow: 3px 2px 40px 24px rgba(0, 0, 0, 0.13);
 }
 
 .only_desc {
@@ -650,7 +642,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #999;
+  background: rgba(0, 0, 0, 0.9);
   border: 1px solid #000;
   z-index: 12;
   display: -webkit-flex;
@@ -666,18 +658,103 @@ section {
   top: 20px;
   width: 30px;
   height: 30px;
-  background: url(https://geizer6991.github.io/marketKnife/img/header/cross_114275.png) 0 0/100% no-repeat;
+  background: url(https://apico.by/files/block/s-1395.png) 0 0/100% no-repeat;
 }
 
+.items_coment_home {
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.item_coment_home {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #999;
+  border-top: 1px solid #999;
+  border-radius: 20px 20px 20px 20px;
+  margin: 5px 0 5px 0;
+}
+
+.item_coment_home img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.item_coment_home > div {
+  width: 100%;
+  margin: 0 10px 0 10px;
+}
+
+.item_coment_home > div > div > time {
+  margin: 0 0 0 10px;
+}
+
+.item_coment_home > div > p {
+  margin: 10px 0 10px 0;
+  max-height: 60px;
+  overflow: hidden;
+}
+
+.tex {
+  word-break: break-all;
+}
+
+.full_com_home {
+  text-align: center;
+  background: #e6e6e6;
+}
+
+.input_coment_home {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+.input_coment_home input {
+  border-radius: 20px 20px 0 0;
+  border-top: 1px solid #999;
+  padding: 1px 10px;
+}
+
+.input_coment_home textarea {
+  max-width: 100%;
+  min-width: 100%;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  padding: 1px 10px;
+}
+
+.input_coment_home button {
+  border-radius: 0 0 20px 20px;
+  border-bottom: 1px solid #999;
+  padding: 1px 10px;
+}
+
+/*url(https://m.io.ua/img_aa/medium/3565/43/35654329.jpg) 0 0/100% 100% no-repeat*/
 .items_product_at_card {
+  background: rgba(0, 0, 0, 0.9) url(https://m.io.ua/img_aa/medium/3565/43/35654329.jpg) 0 0/100% 100% no-repeat;
   flex: 1 1 auto;
   padding: 0 10px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
 .item_chose_product {
   border: 1px solid #060;
   border-radius: 20px;
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 20px auto;
   display: -webkit-flex;
   display: -moz-flex;
@@ -740,6 +817,7 @@ section {
 }
 
 .buy_place {
+  background: black;
   flex: 0 0 80px;
   display: -webkit-flex;
   display: -moz-flex;
@@ -749,6 +827,9 @@ section {
   flex-direction: column;
 }
 
+.all-balans {
+  color: #ddd;
+}
 .all-balans > div {
   font-size: 20px;
   width: fit-content;
@@ -761,8 +842,8 @@ section {
 .buy_card {
   flex: 1 1 auto;
   border: 1px solid #000;
-  max-width: 1000px;
-  width: 90%;
+  width: 100%;
+  max-width: 1300px;
   margin: 0 auto;
   display: -webkit-flex;
   display: -moz-flex;
@@ -772,7 +853,7 @@ section {
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
-  background: rgba(10, 100, 10, 0.4);
+  background: #0a640a;
 }
 .buy_card > div {
   margin: 0 auto;
@@ -799,6 +880,7 @@ section {
 @media (min-width: 768px) {
   .item_knife {
     width: 23%;
+    height: 30%;
     margin: 1%;
   }
 

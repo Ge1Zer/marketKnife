@@ -70,10 +70,10 @@ let actionClick=()=>{
 		
 
 		if(!document.cookie){
-			document.cookie=`produkt:[${JSON.stringify(obj)}]; max-age=36`
+			document.cookie=`produkt:[${JSON.stringify(obj)}]`
 		}else if(arr.length<event.target.attributes['data-stock'].value){
 			arr.push(obj)
-			document.cookie=`produkt:${JSON.stringify(arr)}; max-age=36`
+			document.cookie=`produkt:${JSON.stringify(arr)}`
 		}
 	})
 }
@@ -127,10 +127,15 @@ let fuBigSmall=(event,meth)=>{
 			let v=document.querySelector(`.item-summ[data-type='${event.target.attributes['data-type'].value}'][data-id='${event.target.attributes['data-id'].value}']`)
 			let dValue=d.textContent || d.innerText;
 
+			console.log( Number(dValue)>=Number(d.attributes[`data-max`].value ) )
+
 
 		if(meth=='BIG'){
 			if(Number(dValue)>=Number(d.attributes[`data-max`].value) ){
 
+				console.log(d.attributes[`data-max`].value)
+				console.log(d.textContent)
+				console.log(d.innerText)
 				d.textContent=d.attributes[`data-max`].value;
 				d.innerText=d.attributes[`data-max`].value;
 			}else{
