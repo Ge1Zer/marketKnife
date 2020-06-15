@@ -3,7 +3,7 @@ let getMenu=()=>{
 	let listMenu=[
 		{
 			item:'Продукция'
-			,list:[{type:'все'},{type:'Panter'},{type:'Gryzly'},{type:'Higer'}]
+			,list:[{type:'all'},{type:'Panter'},{type:'Gryzly'},{type:'Higer'}]
 		},{
 			item:'Комплектующие'
 			,list:[{type:'Точильный камень'},{type:'Чехол-Кобура'},{type:'Смазка'}]
