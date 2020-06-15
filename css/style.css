@@ -269,7 +269,7 @@ section {
   margin: 0 0 0 20px;
   padding: 7px;
   border-radius: 10px;
-  color: #009696;
+  color: rgba(0,0,0,1);
 }
 .home > .container_monolog {
   max-width: 1300px;
